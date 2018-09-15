@@ -1,0 +1,22 @@
+{
+  "name": "clustertest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm-run-all --parallel dev:*",
+    "test-server": "nodemon --exec mocha \"routes/*.spec.js\"",
+    "dev:nodemon": "nodemon -w dist dist/index/index.js",
+    "dev:watch-server": "babel index/index.js routes/routes.js --presets es2015-node4 --out-dir dist --source-maps --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4",
+    "npm-run-all": "^4.1.3"
+  }
+}

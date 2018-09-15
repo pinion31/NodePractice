@@ -1,0 +1,35 @@
+{
+  "name": "aug28",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:*",
+    "test-server": "nodemon --exec mocha \"routes/*.spec.js\"",
+    "forever": "forever start dist/index/index.js",
+    "stopall": "forever stopall",
+    "dev:nodemon": "nodemon -w dist dist/index/index.js",
+    "dev:watch-server": "babel index/index.js routes/routes.js --presets es2015-node4 --out-dir dist --source-maps --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "forever": "^0.15.3",
+    "morgan": "^1.9.0",
+    "pg": "^7.4.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2015-node4": "^2.1.1",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.3",
+    "npm-run-all": "^4.1.3",
+    "supertest": "^3.1.0"
+  }
+}

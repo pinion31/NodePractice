@@ -1,0 +1,12 @@
+CREATE TABLE users(
+  username VARCHAR(50) UNIQUE NOT NULL,
+  password VARCHAR(255),
+  email VARCHAR(50) PRIMARY KEY
+);
+
+CREATE TABLE blog(
+  id SERIAL PRIMARY KEY,
+  body VARCHAR(1028) NOT NULL,
+  owner VARCHAR(50) REFERENCES users(email)NOT NULL,
+  post_date DATE
+);
